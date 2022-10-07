@@ -25,6 +25,20 @@ async function getJokes() {
   }
 
   renderJoke(joke);
+  tellMeAJoke(joke);
+}
+
+function tellMeAJoke(joke) {
+  VoiceRSS.speech({
+    key: "0a83c2eec6ee43a8a9c5a51660bb6d4e",
+    src: joke,
+    hl: "en-us",
+    v: "Mike",
+    r: 0,
+    c: "mp3",
+    f: "44khz_16bit_stereo",
+    ssml: false,
+  });
 }
 
 button.addEventListener("click", getJokes);
